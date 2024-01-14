@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="velha.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <header>
+        <div class="titulo"> O&#160;X&#160;O&#160;X &#160;&#160;&#160;&#160;&#160; Jogo da Velha
+            &#160;&#160;&#1605;&#160;&#160; X&#160;O&#160;X&#160;O
+        </div>
+    </header>
+
+    <div id="players" class="players">
+        <label for="players" class="Jogador" style='margin-top: 20px;'>X </label><br>
+        <input type="text" placeholder="Digite o Nome do Jogador 1" id="player1" class="input">
+        <label for="player2" class="Jogador" style="margin-left: 20px; margin-top: 20px;">O</label><br>
+        <input type="text" placeholder="Digite o Nome do Jogador 2" id="player2" class="input"
+            style="margin-right: 30px;">
+        <button type="submit" for="player2" class="btn" id="start"><strong>Go!</strong></button>
+    </div>
+    <h2>Vez de:<span id="turnPlayer"></span></h2>
+    <section>
+        <div class="grid-container" id="gameBoard">
+            <span class="grid-item" data-region="0.0" id="place"></span>
+            <span class="grid-item" data-region="0.1" id="place"></span>
+            <span class="grid-item" data-region="0.2" id="place"></span>
+            <span class="grid-item" data-region="1.0" id="place"></span>
+            <span class="grid-item" data-region="1.1" id="place"></span>
+            <span class="grid-item" data-region="1.2" id="place"></span>
+            <span class="grid-item" data-region="2.0" id="place"></span>
+            <span class="grid-item" data-region="2.1" id="place"></span>
+            <span class="grid-item" data-region="2.2" id="place"></span>
+        </div>
+    </section>
+</body>
+
+</html>
