@@ -27,7 +27,12 @@ function validatePassword(password) {
         throw new Error('A senha deve conter pelo menos um caractere especial.')
     }
 }
+function validateName(name) {
+    if (name === "") {
+        throw new Error('Ops... Esqueceu do Nome')
+    }
 
+}
 
 function resetFormStyles() {
     Object.entries(userInputs).forEach(([key, value]) => {
@@ -41,8 +46,6 @@ function hello(pagina) {
 
 const userInputs = {}
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('btn')
 
@@ -51,20 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('name').value
         const useremail = document.getElementById('email').value
         const userpassword = document.getElementById('password').value
+        const useremail2 = document.getElementById('email').value
+
 
         try {
-
             validateEmail(useremail)
-
             validatePassword(userpassword)
-
-            alert(`Parabens ${username} Cadastro realizado com sucesso!`)
-            resetFormStyles()
-            hello("Pass.html")
+            validateName(username)
+            if (!validateEmail) {
+                useremail2.style.backgroundColor = 'red'
+            }
+            if (validatePassword === false) {
+                userpassword.classList.add('error')
+            }
+            if (validateName === false) {
+                username.classList.add('error')
+            }
+            if (validateName && validatePassword && validateEmail) {
+                alert(`Parabens ${username} Cadastro realizado com sucesso!`)
+                resetFormStyles()
+                hello("Pass.html")
+            }
         } catch (err) {
             alert(err)
-
         }
-
     })
 })
