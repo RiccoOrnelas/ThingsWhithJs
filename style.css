@@ -55,7 +55,7 @@ button:hover {
 }
 
 .error {
-    border: 1px solid #f64348;
+    border: 3px solid #f64348;
 }
 
 .success {
